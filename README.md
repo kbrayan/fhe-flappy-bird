@@ -1,19 +1,29 @@
-# FHEVM React Template
+# 🎮 FHEFlappyBird DApp
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+A decentralized Flappy Bird game built with **React** and **FHEVM** (Fully Homomorphic Ethereum Virtual Machine). This dApp allows users to play Flappy Bird, submit their high scores on-chain, and decrypt the best scores using FHE-enabled smart contracts.
 
-## 🚀 What is FHEVM?
-
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+---
 
 ## ✨ Features
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+- 🕹️ **Play Flappy Bird** directly in your browser.
+- 🔗 **Connect wallet** via RainbowKit to interact with the FHEVM smart contract.
+- 🏆 **Submit scores on-chain** securely.
+- 🔓 **Decrypt top scores** using FHE-enabled functionality.
+- 📱 Fully client-side rendering with responsive UI.
+
+---
+
+## 🛠 Technologies
+
+- ⚛️ **React** + **TypeScript**
+- 🧠 **FHEVM SDK** (`@fhevm-sdk`)
+- 🦊 **Wagmi** + **RainbowKit** for wallet connection
+- 🎨 **Framer Motion** for button animations
+- 💅 **Tailwind CSS** for styling
+- 🖌 **Canvas API** for Flappy Bird game rendering
+
+---
 
 ## 📋 Prerequinextjss
 
@@ -31,7 +41,7 @@ Before you begin, ensure you have:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd fhevm-react-template
+cd fhe-flappy-bird
 
 # Initialize submodules (includes fhevm-hardhat-template)
 git submodule update --init --recursive
@@ -124,7 +134,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 This template uses a monorepo structure with three main packages:
 
 ```
-fhevm-react-template/
+fhe-flappy-bird/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +144,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks`)
+- **`useFHEFlappyBird.tsx`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
