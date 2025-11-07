@@ -1,0 +1,5 @@
+exit
+await contract.hasSubmittedScore("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266");
+const contract = await ethers.getContractAt("FHEFlappyBird", "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707");
+await contract.hasSubmittedScore("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266");
+const contract = await ethers.getContractAt("FHEFlappyBird", "0xbdEd0D2bf404bdcBa897a74E6657f1f12e5C6fb6");
