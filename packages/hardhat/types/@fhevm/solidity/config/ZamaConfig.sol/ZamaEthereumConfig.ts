@@ -7,7 +7,6 @@ import type {
   FunctionFragment,
   Result,
   Interface,
-  AddressLike,
   ContractRunner,
   ContractMethod,
   Listener,
@@ -18,57 +17,27 @@ import type {
   TypedEventLog,
   TypedListener,
   TypedContractMethod,
-} from "../common";
+} from "../../../../common";
 
-export interface FHEFlappyBirdInterface extends Interface {
-  getFunction(
-    nameOrSignature:
-      | "confidentialProtocolId"
-      | "getBestScore"
-      | "hasSubmittedScore"
-      | "submitFlyScore"
-  ): FunctionFragment;
+export interface ZamaEthereumConfigInterface extends Interface {
+  getFunction(nameOrSignature: "confidentialProtocolId"): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "confidentialProtocolId",
     values?: undefined
   ): string;
-  encodeFunctionData(
-    functionFragment: "getBestScore",
-    values: [AddressLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "hasSubmittedScore",
-    values: [AddressLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "submitFlyScore",
-    values: [BytesLike, BytesLike]
-  ): string;
 
   decodeFunctionResult(
     functionFragment: "confidentialProtocolId",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(
-    functionFragment: "getBestScore",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "hasSubmittedScore",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "submitFlyScore",
-    data: BytesLike
-  ): Result;
 }
 
-export interface FHEFlappyBird extends BaseContract {
-  connect(runner?: ContractRunner | null): FHEFlappyBird;
+export interface ZamaEthereumConfig extends BaseContract {
+  connect(runner?: ContractRunner | null): ZamaEthereumConfig;
   waitForDeployment(): Promise<this>;
 
-  interface: FHEFlappyBirdInterface;
+  interface: ZamaEthereumConfigInterface;
 
   queryFilter<TCEvent extends TypedContractEvent>(
     event: TCEvent,
@@ -109,20 +78,6 @@ export interface FHEFlappyBird extends BaseContract {
 
   confidentialProtocolId: TypedContractMethod<[], [bigint], "view">;
 
-  getBestScore: TypedContractMethod<[player: AddressLike], [string], "view">;
-
-  hasSubmittedScore: TypedContractMethod<
-    [player: AddressLike],
-    [boolean],
-    "view"
-  >;
-
-  submitFlyScore: TypedContractMethod<
-    [encryptedScore: BytesLike, proof: BytesLike],
-    [void],
-    "nonpayable"
-  >;
-
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
@@ -130,19 +85,6 @@ export interface FHEFlappyBird extends BaseContract {
   getFunction(
     nameOrSignature: "confidentialProtocolId"
   ): TypedContractMethod<[], [bigint], "view">;
-  getFunction(
-    nameOrSignature: "getBestScore"
-  ): TypedContractMethod<[player: AddressLike], [string], "view">;
-  getFunction(
-    nameOrSignature: "hasSubmittedScore"
-  ): TypedContractMethod<[player: AddressLike], [boolean], "view">;
-  getFunction(
-    nameOrSignature: "submitFlyScore"
-  ): TypedContractMethod<
-    [encryptedScore: BytesLike, proof: BytesLike],
-    [void],
-    "nonpayable"
-  >;
 
   filters: {};
 }

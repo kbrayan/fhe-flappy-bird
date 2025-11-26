@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import {FHE, euint32, externalEuint32} from "@fhevm/solidity/lib/FHE.sol";
-import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
+import {ZamaEthereumConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 
 /**
  * @title FHEFlappyBird
@@ -10,7 +10,7 @@ import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
  * The contract stores each player's highest score in encrypted form.
  * Only the owner of the score can decrypt it.
  */
-contract FHEFlappyBird is SepoliaConfig {
+contract FHEFlappyBird is ZamaEthereumConfig {
     // Encrypted highest score per user
     mapping(address => euint32) private _bestFlyScore;
     mapping(address => bool) private _hasSubmitted;

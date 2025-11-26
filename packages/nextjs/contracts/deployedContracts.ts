@@ -7,8 +7,26 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 const deployedContracts = {
   11155111: {
     FHEFlappyBird: {
-      address: "0xd97C52a7650acc54eA9Eb84bd0a5d2F70513B9E7",
+      address: "0x1bda55f8fA9E8D8bcBACBeefb66A88c9b3ED7804",
       abi: [
+        {
+          inputs: [],
+          name: "ZamaProtocolUnsupported",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "confidentialProtocolId",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
         {
           inputs: [
             {
@@ -45,97 +63,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "protocolId",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "pure",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "externalEuint32",
-              name: "encryptedScore",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "proof",
-              type: "bytes",
-            },
-          ],
-          name: "submitFlyScore",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-      ],
-      inheritedFunctions: {},
-      deployedOnBlock: 9368216,
-    },
-  },
-  31337: {
-    FHEFlappyBird: {
-      address: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
-      abi: [
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "player",
-              type: "address",
-            },
-          ],
-          name: "getBestScore",
-          outputs: [
-            {
-              internalType: "euint32",
-              name: "",
-              type: "bytes32",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "player",
-              type: "address",
-            },
-          ],
-          name: "hasSubmittedScore",
-          outputs: [
-            {
-              internalType: "bool",
-              name: "",
-              type: "bool",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "protocolId",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "pure",
           type: "function",
         },
         {
